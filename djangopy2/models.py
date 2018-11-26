@@ -19,6 +19,9 @@ class Test(models.Model):
     char_4 = models.CharField(null=False, blank=True, max_length=250, db_column='char4',
                               verbose_name=_(u"Char_4"), help_text=_(u"This is the fourth char"), default='char4')
 
+    def __unicode__(self):
+        return self.char_1
+
     class Meta:
         db_table = 'db_table_custom'
         verbose_name = _(u"DB table custom")
